@@ -1,0 +1,14 @@
+<script>
+sock = new WebSocket("ws://localhost:3001/");
+sock.onopen = (evt) => {
+    sock.send(JSON.stringify({hallo:"thieso"}))
+}
+
+sock.onclose = (evt) => {
+}
+
+sock.onmessage = (evt) => {
+    let data = JSON.parse(evt.data)
+    console.log(data);
+}
+</script>
